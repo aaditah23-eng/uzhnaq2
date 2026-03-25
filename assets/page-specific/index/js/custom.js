@@ -1232,7 +1232,7 @@ async function initGearboxThree() {
   const gearboxCandidates = Array.from(
     new Set([
       new URL("assets/models/gearbox.glb", window.location.href).toString(),
-      new URL("assets/models/gearbox.glb", window.location.href).toString(),
+      new URL("/assets/models/gearbox.glb", window.location.origin).toString(),
     ]),
   );
 

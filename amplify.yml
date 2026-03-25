@@ -3,7 +3,9 @@ frontend:
   phases:
     preBuild:
       commands:
-        - echo "Build starting..."
+        - yum install -y git-lfs || apt-get install -y git-lfs || echo "WARNING - git-lfs installation failed"
+        - git lfs install
+        - git lfs pull
     build:
       commands:
         - echo "Build complete"
