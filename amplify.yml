@@ -3,14 +3,17 @@ frontend:
   phases:
     preBuild:
       commands:
-        - echo "Build starting..."
+        - apt-get install git-lfs
+        - git lfs install
+        - git lfs pull
     build:
       commands:
-        - echo "Build complete"
+        - npm install
+        - npm run build
   artifacts:
-    baseDirectory: /
+    baseDirectory: build
     files:
       - '**/*'
   cache:
     paths:
-      - 'node_modules/**/*'
+      - node_modules/**
